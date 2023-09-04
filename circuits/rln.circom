@@ -20,21 +20,27 @@ template RLN(DEPTH, LIMIT_BIT_SIZE) {
     signal output root;
     signal output nullifier;
 
-    signal identityCommitment <== Poseidon(1)([identitySecret]);
-    signal rateCommitment <== Poseidon(2)([identityCommitment, userMessageLimit]);
+    // TODO 1. assign identityCommitmnet to poseidon hash of [identitySecret]
+
+    // TODO 2. assign rateCommitment to poseidon hash of [identityCommitment, userMessageLimit]
+
 
     // Membership check
-    root <== MerkleTreeInclusionProof(DEPTH)(rateCommitment, identityPathIndex, pathElements);
+    // TODO 3. assign root to merkleTreeProof of rateCommitment
+
 
     // messageId range check
-    RangeCheck(LIMIT_BIT_SIZE)(messageId, userMessageLimit);
+    // TODO 4. check range messageId < userMessageLimit
+
 
     // SSS share calculations
-    signal a1 <== Poseidon(3)([identitySecret, externalNullifier, messageId]);
-    y <== identitySecret + a1 * x;
+    // TODO 5. calculate a1
+
+    // TODO 6. assign y with identitySecret, a1, x
 
     // nullifier calculation
-    nullifier <== Poseidon(1)([a1]);
+    // TODO 7. assign nullifier to poseidon hash of [a1]
+    
 }
 
 component main { public [x, externalNullifier] } = RLN(20, 16);
