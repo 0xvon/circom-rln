@@ -21,6 +21,8 @@ The core parts of RLN are:
 * [registry smart-contract](https://github.com/Rate-Limiting-Nullifier/rln-contract);
 * set of libraries to build app with RLN ([rlnjs](https://github.com/Rate-Limiting-Nullifier/rlnjs), [zerokit](https://github.com/vacp2p/zerokit)).
 
+<img src="https://scrapbox.io/files/64f852e6087833001c6abcd2.png" width="500">
+
 ---
 
 To learn more on RLN and how it works - check out [documentation](https://rate-limiting-nullifier.github.io/rln-docs/).
